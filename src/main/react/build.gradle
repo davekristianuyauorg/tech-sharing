@@ -1,0 +1,8 @@
+apply plugin: “com.moowork.node” (1)
+ apply plugin: ‘base’ (2)
+ 
+ task appNpmBuild(type: NpmTask) { (3)
+ args = [“run”, “build”]
+ }
+ 
+ assemble.dependsOn(appNpmBuild) (4)
